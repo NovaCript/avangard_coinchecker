@@ -3,7 +3,7 @@ from aiogram.filters import CommandStart, Command
 from aiogram.types import Message
 import asyncio
 import requests
-from app.config import settings
+from config import settings
 
 
 API_TOKEN = settings.TELEGRAM_TOKEN
