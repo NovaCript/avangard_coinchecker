@@ -52,7 +52,7 @@ async def add_currency_handler(message: Message) -> None:
         user_currencies[chat_id][symbol] = {"max_threshold": max_threshold, "min_threshold": min_threshold}
         await message.answer(f"Добавлена криптовалюта {symbol} с порогами {max_threshold} и {min_threshold}")
     except ValueError:
-        await message.answer("Неправильный формат сообщения. Используйте формат: BTC 60 50")
+        await message.answer("Неправильный формат сообщения. Используйте формат: /add BTC 60 50")
 
 async def check_currencies_periodically():
     while True:
