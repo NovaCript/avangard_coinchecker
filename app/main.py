@@ -81,8 +81,10 @@ async def main():
     dp = Dispatcher()
     dp.include_router(router)
 
-    asyncio.create_task(check_currencies_periodically())
-    await dp.start_polling(bot)
+    await asyncio.gather(
+        dp.start_polling(bot),
+        check_currencies_periodically()
+    )
 
 if __name__ == '__main__':
     try:
